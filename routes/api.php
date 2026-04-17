@@ -6,6 +6,7 @@ use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\mtEducationController;
 use App\Http\Controllers\API\ProfileController;
 use App\Http\Controllers\API\VacancyController;
+use App\Http\Controllers\API\CandidateEventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +38,8 @@ Route::post('/vacancy/apply', [VacancyController::class, 'apply']);
 Route::get('/vacancy/check-applied', [VacancyController::class, 'checkApplied']);
 
 Route::get('/education', [mtEducationController::class, 'list']);
+
+Route::get('/candidate/events', [CandidateEventController::class, 'getEvents']);
+Route::post('/candidate/confirm-attendance', [CandidateEventController::class, 'confirmAttendance']);
+Route::post('/candidate/generate-qr', [CandidateEventController::class, 'generateQR']);
+
